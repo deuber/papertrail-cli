@@ -142,6 +142,16 @@ invoke `pt` with optional search operators:
     $ function pt() { papertrail -f -d 5 $* | colortail -g papertrail; }
     $ pt 1.2.3 Failure
 
+You can also leverage multiple arguements:
+
+    $ function pt_min() { papertrail --min-time '$* minute ago' $* | wc -l; }
+    $ pt_min 1 Failure
+
+    $ function pt_max() { papertrail --max-time '$* minute ago' $* | wc -l; }
+    $ pt_max 1 Failure
+
+
+
 Add the function line to your `~/.bashrc`.
 
 ### Advanced
